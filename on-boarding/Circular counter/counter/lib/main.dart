@@ -23,11 +23,17 @@ class CounterScreen extends State<CounterScreenState>{
   
   void _increment(){
     setState(() {
+      if (_count == 10){
+        _count=-1;
+      }
       _count++;
     });
   }
   void _decrement(){
     setState(() {
+      if (_count == 0){
+        _count=11;
+      }
       _count--;
     });
   }
